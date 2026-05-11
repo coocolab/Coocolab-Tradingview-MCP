@@ -51,12 +51,11 @@ Claude 寫好、注入編輯器、編譯、回報錯誤，一條龍。
 把這段貼進 Claude Code，它會幫你處理好所有事情：
 
 ```
-幫我安裝 TradingView MCP Coocolab 版。
-1. 把 https://github.com/coocolab/Coocolab-Youtube.git clone 到 ~/Coocolab-Youtube，執行 cd ~/Coocolab-Youtube/Coocolab-Tradingview-MCP 然後 npm install。
-2. 找出我的系統使用者名稱（echo $USER），然後把以下設定加到 ~/.claude/.mcp.json（跟現有 server 合併，不要覆蓋）：
-   { "mcpServers": { "tradingview": { "command": "node", "args": ["/Users/你找到的使用者名稱/Coocolab-Youtube/Coocolab-Tradingview-MCP/src/server.js"] } } }
-3. 把 rules.example.json 複製成 rules.json 並打開讓我填入交易規則。
-4. 重啟 Claude Code 並用 tv_health_check 確認連線。
+Set up TradingView MCP Coocolab Edition for me.
+Clone https://github.com/coocolab/Coocolab-Tradingview-MCP.git to ~/Coocolab-Tradingview-MCP, run npm install, then add it to my MCP config at ~/.claude/.mcp.json (merge with any existing servers, don't overwrite them).
+The config block is: { "mcpServers": { "tradingview": { "command": "node", "args": ["/Users/YOUR_USERNAME/Coocolab-Tradingview-MCP/src/server.js"] } } } — replace YOUR_USERNAME with my actual username.
+Then copy rules.example.json to rules.json and open it so I can fill in my trading rules.
+Finally restart and verify with tv_health_check.
 ```
 
 或者照下面的手動步驟操作。
