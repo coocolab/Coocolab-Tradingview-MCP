@@ -1,0 +1,49 @@
+{
+  "_說明": "這是你的交易規則設定檔。複製成 rules.json 並填入你自己的設定。晨間報告每天會自動套用這些規則。",
+  
+  "watchlist": [
+    "BTCUSD",
+    "ETHUSD",
+    "SOLUSDT"
+  ],
+
+  "bias_criteria": {
+    "_說明": "定義什麼情況算偏多、偏空、中立",
+    "bullish": [
+      "價格在 20 EMA 和 50 EMA 之上",
+      "RSI 在 50 以上且向上",
+      "MACD 柱狀圖為正且擴大"
+    ],
+    "bearish": [
+      "價格在 20 EMA 和 50 EMA 之下",
+      "RSI 在 50 以下且向下",
+      "MACD 柱狀圖為負且擴大"
+    ],
+    "neutral": [
+      "價格在 EMA 之間震盪",
+      "RSI 在 45-55 區間",
+      "MACD 柱狀圖接近零軸"
+    ]
+  },
+
+  "risk_rules": [
+    "單筆交易最大虧損不超過帳戶 1%",
+    "同時持倉最多 3 個標的",
+    "若當日已虧損 3%，停止交易",
+    "重要財經資料發布前 30 分鐘不進新倉"
+  ],
+
+  "timeframes": {
+    "bias": "D",
+    "entry": "4H",
+    "management": "1H"
+  },
+
+  "key_levels": {
+    "_說明": "可選填，用來標記重要價位",
+    "BTCUSD": {
+      "major_resistance": 100000,
+      "major_support": 80000
+    }
+  }
+}
